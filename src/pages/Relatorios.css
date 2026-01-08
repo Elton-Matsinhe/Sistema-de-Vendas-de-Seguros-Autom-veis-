@@ -1,0 +1,239 @@
+/* Estilos base */
+.relatorios-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titulo-principal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.icon-titulo {
+  font-size: 1.5em;
+}
+
+/* Card do formulário */
+.relatorios-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Grupos do formulário */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.form-group input,
+.custom-select select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.form-group input:focus,
+.custom-select select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+/* Select personalizado */
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  appearance: none;
+  padding-right: 40px;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #7f8c8d;
+}
+
+/* Parâmetros */
+.parametros-header {
+  margin: 25px 0 15px;
+}
+
+.botao-parametros {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #3498db;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.parametro-arrow {
+  transition: transform 0.3s;
+}
+
+.parametro-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.parametros-content {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+/* Formatos de download */
+.formatos-download {
+  margin-bottom: 25px;
+}
+
+.formatos-download label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.formatos-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.formato-botao {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 15px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.formato-botao:hover {
+  background-color: #f8f9fa;
+}
+
+.formato-botao.ativo {
+  background-color: #e8f4fc;
+  border-color: #3498db;
+}
+
+/* Rodapé do formulário */
+.form-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.botao-gerar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 25px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botao-gerar:hover {
+  background-color: #2980b9;
+}
+
+.botao-gerar:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Animações */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.girando {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .relatorios-container {
+    padding: 15px;
+  }
+  
+  .relatorios-card {
+    padding: 20px 15px;
+  }
+  
+  .formatos-botoes {
+    gap: 8px;
+  }
+  
+  .formato-botao {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  .botao-gerar {
+    padding: 10px 20px;
+    width: 100%;
+    justify-content: center;
+  }
+}

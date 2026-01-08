@@ -1,0 +1,362 @@
+/* sidebar */
+.sidebar {
+    background-color: #0e0d0d;
+    width: 260px;
+    padding: 36px 20px;
+    transition: #106a37;
+  }
+  .user-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 16px;
+  }
+  .info-name {
+    font-weight: 500;
+  }
+  .info-img {
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    overflow: hidden;
+    border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+ .info-name {
+  font-size: 16px;              /* menor que 20px */
+  color: #b7b5b5;
+  text-transform: capitalize;   /* primeira letra maiúscula */
+  font-weight: 600;             /* um pouco mais negrito */
+  letter-spacing: 0.05em;       /* espaçamento leve */
+  cursor: default;
+  transition: color 0.3s ease, transform 0.3s ease;
+  user-select: none;            /* evita seleção do texto */
+}
+
+
+.info-name:hover {
+  color: #106a37;               /* tom de amarelo claro (mais suave que pumpkin) */
+  transform: scale(1.0);       /* leve zoom */
+}
+
+  .navigation {
+    margin-top: 28px;
+    height: 600px;
+    overflow-y: scroll;
+  
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgb(14, 121, 60);
+      border-radius: 18px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: #106a37;
+      border-radius: 18px;
+    }
+  }
+  .sidebar-change {
+    margin-left: -260px;
+  }
+  
+  .nav-item {
+    margin-bottom: 10px;
+    margin-right: 4px;
+  }
+  .nav-link {
+    display: block;
+    height: 44px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex;
+    padding: 6px 14px;
+    column-gap: 12px;
+    letter-spacing: 0.03em;
+    border: 1px solid transparent;
+    transition: #106a37;
+  }
+  .nav-link:hover {
+    border: 1px solid #106a37;
+  }
+  .nav-link.active {
+    background-color: #106a37;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+      rgba(10, 10, 10, 0.04) 0px 10px 10px -5px;
+  }
+  .nav-link-icon {
+    width: 22px;
+  }
+  .nav-link-text {
+    text-transform: capitalize;
+  }
+
+
+  @media screen and (max-width: 1400px) {
+    .sidebar {
+      padding: 24px 16px;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .sidebar {
+      width: 72px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    .sidebar-change {
+      margin-left: -72px;
+    }
+    .info-name {
+      display: none;
+    }
+    .nav-item {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .nav-link {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+    }
+    .nav-link.active {
+      border-radius: 100%;
+    }
+    .nav-link:hover {
+      border-radius: 100%;
+    }
+    .nav-link-text {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .sidebar {
+      margin-left: -72px;
+    }
+    .sidebar-change {
+      margin-left: 0px;
+    }
+  }
+
+  /**/
+  /* ===================== */
+/* SIDEBAR PROFISSIONAL */
+/* ===================== */
+
+.sidebar {
+  background-color: #1c1b1b;
+  width: 280px;
+  padding: 30px 20px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-right: 1px solid #f0f0f0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Container do usuário com animação de brilho */
+.user-info {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  padding: 0 10px 20px 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f5f5f5;
+  position: relative;
+  overflow: hidden;
+}
+
+.user-info::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle at center, 
+              rgba(16, 106, 55, 0.1) 0%, 
+              rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 0;
+}
+
+.user-info:hover::after {
+  opacity: 1;
+}
+
+/* Imagem do usuário (mantida redonda como estava) */
+
+.user-info:hover .info-img {
+  border-color: #106a37;
+}
+
+/* Nome do usuário com efeito de sublinhado animado */
+.info-name {
+  font-size: 16px;
+  color: #d1cdcd;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  position: relative;
+  z-index: 1;
+}
+
+.info-name::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #106a37;
+  transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.user-info:hover .info-name::after {
+  width: 100%;
+}
+
+/* Navegação com efeitos profissionais */
+.navigation {
+  margin-top: 20px;
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Itens de menu com animação de preenchimento */
+.nav-item {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  padding: 0 16px;
+  border-radius: 8px;
+  column-gap: 14px;
+  color: #555555;
+  font-weight: 500;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, 
+              lch(63.53% 68 148.09 / 0.1) 0%, 
+              rgba(10, 140, 66, 0.05) 100%);
+  transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: -1;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+/* Item ativo com efeito de onda */
+.nav-link.active {
+  color: #fff;
+  font-weight: 600;
+  background-color: #106a37;
+  animation: waveActive 1.5s ease-out;
+}
+
+@keyframes waveActive {
+  0% {
+    box-shadow: 0 0 0 0 rgb(16, 106, 55);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgb(16, 106, 55);
+  }
+}
+
+/* Ícones com efeito flutuante sutil */
+.nav-link-icon {
+  width: 20px;
+  height: 20px;
+  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+
+
+.nav-item:hover .nav-link-icon {
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(5deg);
+  }
+}
+
+/* Scrollbar personalizada */
+.navigation::-webkit-scrollbar {
+  width: 5px;
+}
+
+.navigation::-webkit-scrollbar-track {
+  background: #106a37;
+  border-radius: 10px;
+}
+
+.navigation::-webkit-scrollbar-thumb {
+  background-color: #106a37;
+  border-radius: 10px;
+  transition: background-color 0.4s ease;
+}
+
+.navigation:hover::-webkit-scrollbar-thumb {
+  background-color: #106a37;
+}
+
+/* Sidebar.css - Ajustes para o logo */
+
+
+
+.logo-container {
+  position: relative;
+  top: -18px; /* Move o container 15px para cima */
+  padding: 0 20px; /* Remove todo padding vertical */
+  text-align: center;
+  margin-bottom: 5px; /* Espaço reduzido após o logo */
+}
+
+.company-logo {
+  width: 100px; /* Tamanho ainda menor */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Restante do seu CSS existente */
+.navigation {
+  margin-top: 0; /* Remove margem superior se existir */
+}
+
+/* Mantenha os outros estilos do sidebar */
+.sidebar {
+  /* seus estilos existentes */
+}

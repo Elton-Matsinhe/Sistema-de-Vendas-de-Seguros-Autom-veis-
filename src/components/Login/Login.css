@@ -1,0 +1,279 @@
+/* Reset e estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #18222841 0%, #15345130 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Efeito de vidro aprimorado */
+.glass-card {
+  width: 450px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.logo {
+  height: 85px;
+  width: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Grupo de inputs */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin-bottom: 2.2rem;
+}
+
+/* Estilo dos campos de input */
+.input-field {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 16px 20px 16px 48px;
+  font-size: 15px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.input-field input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input-field input:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(0, 180, 120, 0.6);
+  box-shadow: 0 0 0 3px rgba(0, 180, 120, 0.1);
+}
+
+.input-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.input-field.active .input-icon {
+  color: #00b478;
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform-origin: left;
+}
+
+/* Links e opções */
+.options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.2rem;
+  font-size: 14px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.remember-me input {
+  width: 16px;
+  height: 16px;
+  accent-color: #00b478;
+}
+
+.forgot-password {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.forgot-password::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #00b478;
+  transition: width 0.4s ease;
+}
+
+.forgot-password:hover::after {
+  width: 100%;
+}
+
+.forgot-password:hover {
+  color: #00b478;
+}
+
+/* Botão de login */
+.login-button {
+  width: 100%;
+  padding: 16px;
+  background: #106a37;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-bottom: 1.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.login-button:hover::before {
+  left: 100%;
+}
+
+.login-button:hover {
+  background: #009966;
+  transform: translateY(-2px);
+}
+
+/* Link de registro */
+.signup-link {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.signup-text {
+  color: #106a37;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.signup-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #00b478;
+  transition: width 0.4s ease;
+}
+
+.signup-text:hover::after {
+  width: 100%;
+}
+
+.signup-text:hover {
+  color: #00d18c;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .glass-card {
+    width: 90%;
+    padding: 30px 25px;
+    border-radius: 16px;
+  }
+  
+  .logo {
+    height: 70px;
+  }
+  
+  .input-field input {
+    padding: 14px 16px 14px 44px;
+  }
+}
+
+/* Adicione estas regras ao seu arquivo CSS existente */
+
+.input-field {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.password-toggle:hover {
+  color: #00b478;
+}
+
+.password-toggle svg {
+  font-size: 16px;
+}
+
+/* Ajuste o padding do input de senha para dar espaço ao ícone */
+.input-field input[type="password"],
+.input-field input[type="text"] {
+  padding-right: 45px !important;
+}

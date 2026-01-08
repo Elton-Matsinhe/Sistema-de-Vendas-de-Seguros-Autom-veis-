@@ -1,0 +1,110 @@
+.coming-soon-container.payment {
+  background: linear-gradient(135deg, var(--bg-color) 0%, #f0f8ff 100%);
+}
+
+.floating-coins {
+  position: relative;
+  height: 80px;
+  margin-bottom: 2rem;
+}
+
+.coin {
+  position: absolute;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  opacity: 0.8;
+}
+
+.coin:nth-child(1) {
+  left: 30%;
+  top: 0;
+}
+
+.coin:nth-child(2) {
+  left: 50%;
+  top: 20px;
+}
+
+.coin:nth-child(3) {
+  left: 40%;
+  top: 40px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 500px;
+  margin: 2rem auto 0;
+  padding-left: 50px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--primary-color);
+  opacity: 0.3;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.timeline-content {
+  padding: 1rem;
+  background-color: #106a37;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  color: var(--text-color);
+}
+
+.timeline-content p {
+  margin-bottom: 0;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+/* Estilos para o estado de carregamento */
+.carregando {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  gap: 15px;
+  color: var(--text-light);
+}
+
+.icon-spin {
+  font-size: 2rem;
+  animation: spin 1s linear infinite;
+  color: var(--primary-color);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
