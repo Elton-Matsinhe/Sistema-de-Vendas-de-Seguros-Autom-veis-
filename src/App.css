@@ -1,11 +1,9 @@
-/* ================= GLOBAL RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ================= FONTES E VARIÁVEIS ================= */
 @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap");
 
 :root {
@@ -27,7 +25,6 @@
   --transition-default: all 300ms ease-in-out;
 }
 
-/* ================= BODY ================= */
 body {
   font-family: var(--font-family-bai);
   background-color: var(--clr-black);
